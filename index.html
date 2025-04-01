@@ -1,402 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Tìm kiếm câu hỏi về Alcohol</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu Alcohol - Tìm kiếm</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            max-width: 100%;
-            margin: 0;
-            padding: 15px;
-            background-color: #f5f7fa;
-            color: #333;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
         }
-        
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            font-size: 1.5rem;
-        }
-        
         .search-container {
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            z-index: 100;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
         }
-        
         #searchInput {
             width: 100%;
-            padding: 10px 15px;
-            border: 2px solid #ddd;
-            border-radius: 20px;
-            font-size: 14px;
-            outline: none;
-            transition: all 0.3s;
-            box-sizing: border-box;
-        }
-        
-        #searchInput:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
-        }
-        
-        .question {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 14px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.2s;
-            border: 2px solid #000000;
-        }
-        
-        .question:hover {
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
-        
-        .question h5 {
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 10px;
+            padding: 10px;
             font-size: 16px;
-        }
-        
-        .answer {
-            color: #27ae60;
-            font-weight: 500;
-            padding: 8px 12px;
-            background-color: #f8f9fa;
-            border-left: 3px solid #27ae60;
-            border-radius: 0 3px 3px 0;
-            font-size: 14px;
-        }
-        
-        .no-results {
-            text-align: center;
-            padding: 30px;
-            color: #7f8c8d;
-            font-size: 16px;
-            display: none;
-        }
-        
-        .question img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px auto;
+            border: 1px solid #ddd;
             border-radius: 4px;
         }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            body {
-                max-width: 900px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-            
-            .search-container {
-                padding: 15px;
-                margin-bottom: 30px;
-            }
-            
-            #searchInput {
-                padding: 12px 20px;
-                font-size: 16px;
-            }
-            
-            .question {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-            
-            .question h5 {
-                font-size: 18px;
-            }
-            
-            .answer {
-                font-size: 16px;
-                padding: 10px 15px;
-            }
+        .qa-card {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background: white;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .answer {
+            color: #34495e;
+            padding-left: 15px;
+            border-left: 3px solid #3498db;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <h1>50 Câu hỏi về Alcohol - Hóa học hữu cơ</h1>
+    <h1>Tài liệu về Alcohol</h1>
     
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Tìm kiếm câu hỏi hoặc đáp án...">
+        <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm...">
     </div>
     
-    <div id="quizContainer">
-        <!-- Câu hỏi sẽ được hiển thị ở đây -->
+    <div id="qaContainer">
+        <div class="qa-card">
+            <div class="question">Alcohol là những hợp chất hữu cơ:</div>
+            <div class="answer">Trong phân tử có nhóm hydroxyl liên kết trực tiếp với nguyên tử carbon no.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Có thể phân loại alcohol theo các cách:</div>
+            <div class="answer">Gốc hydrocarbon, số lượng nhóm hydroxyl, bậc alcohol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Công thức chung của alcohol no, đơn chức, mạch hở là:</div>
+            <div class="answer">C<sub>n</sub>H<sub>2n+1</sub>OH</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Hai alcohol đầu tiên trong dãy đồng đẳng alcohol no, đơn chức, mạch hở là:</div>
+            <div class="answer">Methanol, ethanol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Alcohol chứa nhiều nhóm hydroxyl trong phân tử được gọi là:</div>
+            <div class="answer">Polyalcohol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Chọn phát biểu đúng về tính chất vật lý của alcohol:</div>
+            <div class="answer">Nhiệt độ sôi cao hơn các hydrocarbon có phân tử khối tương đương.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Ở điều kiện thường, các alcohol no, đơn chức, mạch hở chứa bao nhiêu nguyên tử carbon là chất lỏng?</div>
+            <div class="answer">Từ 1 đến 11 nguyên tử carbon.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Các alcohol nào sau đây sánh, nặng hơn nước và có vị ngọt?</div>
+            <div class="answer">Ethane-1,2-diol, glycerol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Liên kết C-OH và O-H trong phân tử alcohol là các liên kết cộng hóa trị phân cực do:</div>
+            <div class="answer">Nguyên tử oxygen có độ âm điện lớn hơn carbon và hydrogen.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Phản ứng nào của alcohol xảy ra sẽ giải phóng khí hydrogen?</div>
+            <div class="answer">Phản ứng thế nguyên tử hydrogen trong nhóm -OH</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Alcohol nào sau đây không bị oxihóa bởi CuO?</div>
+            <div class="answer">2-methylpropan-2-ol</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Chất nào sau đây không hòa tan copper(II) hydroxide?</div>
+            <div class="answer">Propane-1,3-diol</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Alcohol có nhiều ứng dụng trong đời sống và sản xuất là:</div>
+            <div class="answer">Ethyl alcohol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Rượu giả được pha chế từ cồn công nghiệp có chứa một lượng nhỏ chất gì?</div>
+            <div class="answer">Methanol.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Ứng dụng nào sau đây không phải của ethanol:</div>
+            <div class="answer">Chất giữ ấm trong mĩ phẩm.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Còn bao nhiêu độ thì rất dễ bắt lửa và cháy?</div>
+            <div class="answer">50° trở lên</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Chọn phát biểu sai:</div>
+            <div class="answer">Cất trữ các chai cồn gần bếp, khu vực đun, nấu.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Methanol có nhiều trong đồ uống có cồn.</div>
+            <div class="answer">Sai. Methanol là chất độc không có trong đồ uống có cồn thông thường.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Vì sao rượu bia là nguyên nhân hàng đầu gây ra tai nạn giao thông?</div>
+            <div class="answer">Ethanol tác động đến hệ thần kinh và đặc biệt là não, làm phản ứng cơ thể chậm đi.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Ethanol được điều chế phổ biến bằng phương pháp:</div>
+            <div class="answer">Lên men các nguyên liệu chứa nhiều tinh bột hoặc đường.</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Alcohol no, đơn chức có 10 nguyên tử H trong phân tử có số đồng phân là:</div>
+            <div class="answer">4</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Một alcohol no, đơn chức, mạch hở có %H = 13,04% về khối lượng, có công thức phân tử là:</div>
+            <div class="answer">C<sub>2</sub>H<sub>5</sub>OH</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Có bao nhiêu alcohol bậc 2, no, đơn chức, mạch hở là đồng phân của nhau mà phân tử của chúng có phần trăm khối lượng carbon bằng 68,18%?</div>
+            <div class="answer">3</div>
+        </div>
+        
+        <div class="qa-card">
+            <div class="question">Có bao nhiêu alcohol bậc III, có công thức phân tử C<sub>6</sub>H<sub>14</sub>O?</div>
+            <div class="answer">3</div>
+        </div>
     </div>
     
-    <div class="no-results" id="noResults">
-        Không tìm thấy kết quả phù hợp
+    <div id="noResults" class="no-results" style="display: none;">
+        Không tìm thấy kết quả phù hợp.
     </div>
 
     <script>
-        // Dữ liệu câu hỏi
-        const questions = [
-            {
-                question: "Alcohol là những hợp chất hữu cơ:",
-                answer: "Trong phân tử có nhóm hydroxy liên kết trực tiếp với nguyên tử carbon no."
-            },
-            {
-                question: "Có thể phân loại alcohol theo các cách:",
-                answer: "Gốc hydrocarbon, số lượng nhóm hydroxy, bậc alcohol."
-            },
-            {
-                question: "Công thức chung của alcohol no, đơn chức, mạch hở là:",
-                answer: "CnH2n+1OH"
-            },
-            {
-                question: "Hai alcohol đầu tiên trong dãy đồng đẳng alcohol no, đơn chức, mạch hở là:",
-                answer: "Methanol, ethanol."
-            },
-            {
-                question: "Alcohol chứa nhiều nhóm hydroxy trong phân tử được gọi là:",
-                answer: "Polyalcohol."
-            },
-            {
-                question: "Chọn phát biểu đúng về tính chất vật lý của alcohol:",
-                answer: "Nhiệt độ sôi cao hơn các hydrocarbon có phân tử khối tương đương."
-            },
-            {
-                question: "Ở điều kiện thường, các alcohol no, đơn chức, mạch hở chứa bao nhiêu nguyên tử carbon là chất lỏng?",
-                answer: "Từ 1 đến 11 nguyên tử carbon."
-            },
-            {
-                question: "Các alcohol nào sau đây sánh, nặng hơn nước và có vị ngọt?",
-                answer: "Ethane-1,2-diol, glycerol."
-            },
-            {
-                question: "Liên kết C-OH và O-H trong phân tử alcohol là các liên kết cộng hóa trị phân cực do:",
-                answer: "Nguyên tử oxygen có độ âm điện lớn hơn carbon và hydrogen."
-            },
-            {
-                question: "Liên kết C-OH và liên kết O-H là các liên kết cộng hóa trị phân cực nên các thành phần dễ bị tách trong các phản ứng hóa học là:",
-                answer: "Nguyên tử hydrogen hoặc nhóm hydroxy."
-            },
-            {
-                question: "Phản ứng nào của alcohol xảy ra sẽ giải phóng khí hydrogen?",
-                answer: "Phản ứng thế nguyên tử hydrogen trong nhóm -OH"
-            },
-            {
-                question: "Alcohol nào sau đây không bị oxi hóa bởi CuO?",
-                answer: "2-methylpropan-2-ol"
-            },
-            {
-                question: "Chất nào sau đây không hòa tan copper(II) hydroxide?",
-                answer: "Propane-1,3-diol"
-            },
-            {
-                question: "Các alcohol có phản ứng hòa tan copper(II) hydroxide có đặc điểm:",
-                answer: "Có 2 nhóm hydroxy liền kề."
-            },
-            {
-                question: "Cồn bao nhiêu độ thì rất dễ bắt lửa và cháy?",
-                answer: "50° trở lên"
-            },
-            {
-                question: "Chọn phát biểu sai:",
-                answer: "Cất trữ các chai cồn gần bếp, khu vực đun, nấu."
-            },
-            {
-                question: "Alcohol có nhiều ứng dụng trong đời sống và sản xuất là:",
-                answer: "Ethyl alcohol."
-            },
-            {
-                question: "Rượu giả được pha chế từ cồn công nghiệp có chứa một lượng nhỏ chất gì?",
-                answer: "Methanol."
-            },
-            {
-                question: "Ứng dụng nào sau đây không phải của ethanol:",
-                answer: "Chất giữ ẩm trong mĩ phẩm."
-            },
-            {
-                question: "Ứng dụng của glycerol trong đời sống là:",
-                answer: "Làm hương vị trong thực phẩm."
-            },
-            {
-                question: "Trong công nghiệp sản xuất rượu, các chất độc hại nào thường được loại bỏ?",
-                answer: "Methanol, aldehyde."
-            },
-            {
-                question: "Chọn phát biểu sai:",
-                answer: "Methanol có nhiều trong đồ uống có cồn."
-            },
-            {
-                question: "Vì sao rượu bia là nguyên nhân hàng đầu gây ra tai nạn giao thông?",
-                answer: "Ethanol tác động đến hệ thần kinh và đặc biệt là não, làm phản ứng cơ thể chậm đi."
-            },
-            {
-                question: "Ethanol được điều chế phổ biến bằng phương pháp:",
-                answer: "Lên men các nguyên liệu chứa nhiều tinh bột hoặc đường."
-            },
-            {
-                question: "Alcohol no, đơn chức có 10 nguyên tử H trong phân tử có số đồng phân là:",
-                answer: "4"
-            },
-            {
-                question: "Một alcohol no, đơn chức, mạch hở có %H = 13,04% về khối lượng, có công thức phân tử là:",
-                answer: "C2H5OH"
-            },
-            {
-                question: "Có bao nhiêu alcohol bậc 2, no, đơn chức, mạch hở là đồng phân cấu tạo của nhau mà phân tử của chúng có phần trăm khối lượng carbon bằng 68,18%?",
-                answer: "3"
-            },
-            {
-                question: "Có bao nhiêu alcohol bậc III, có công thức phân tử C6H14O?",
-                answer: "3"
-            },
-            {
-                question: "Alcohol bậc mấy phản ứng với CuO sinh ra ketone?",
-                answer: "2"
-            },
-            {
-                question: "Alcohol bậc 1 phản ứng với CuO sinh ra:",
-                answer: "Aldehyde"
-            },
-            {
-                question: "Bậc của alcohol là:",
-                answer: "Bậc nguyên tử carbon liên kết với nhóm -OH."
-            },
-            {
-                question: "Bậc alcohol của 2-metylbutan-2-ol là:",
-                answer: "Bậc 3"
-            },
-            {
-                question: "Các alcohol (CH3)2CHOH, CH3CH2OH, (CH3)3C-OH có bậc alcohol lần lượt là:",
-                answer: "2, 1, 3"
-            },
-            {
-                question: "Phương pháp điều chế ethyl alcohol từ chất nào sau đây là phương pháp sinh hóa?",
-                answer: "Tinh bột"
-            },
-            {
-                question: "Chất nào được dùng để điều chế methyl amine, methyl chloride?",
-                answer: "Methanol"
-            },
-            {
-                question: "Cho các hợp chất sau:(a) HOCH2-CH2OH. (b) HOCH2-CH2-CH2OH. (c) HOCH2-CH(OH)-CH2OH. (d) CH3-CH(OH)-CH2OH. (e) CH3-CH2OH. (f) CH3-O-CH2CH3 Các chất đều tác dụng được với Na, Cu(OH)2:",
-                answer: "(a), (c), (d)"
-            },
-            {
-                question: "Khi đun nóng 2 trong số 3 alcohol CH4O, C2H6O, C4H10O với xúc tác, nhiệt độ thích hợp chỉ thu được 2 olefin thì 2 alcohol đó là",
-                answer: "CH3CH2OH và CH3CH2CH2CH2OH"
-            },
-            {
-                question: "Hợp chất hữu cơ X có công thức phân tử là C5H12O, khi tách nước tạo hỗn hợp 3 alkene đồng phân (kể cả đồng phân hình học). X có cấu tạo thu gọn là",
-                answer: "CH3CH2CH2CH(OH)CH3"
-            },
-            {
-                question: "Alcohol nào bị oxi hóa tạo ketone?",
-                answer: "Propan-2-ol"
-            },
-            {
-                question: "Cho 3 ống nghiệm chứa các dung dịch sau: vinyl alcohol, ethyl alcohol, ethylene glycol. Dùng những hóa chất nào để phân biệt 3 ống nghiệm trên?",
-                answer: "KMnO4, Cu(OH)2."
-            },
-            {
-                question: "X là hỗn hợp gồm hai alkene (ở thể khí trong điều kiện thường). Hydrate hóa X được hỗn hợp Y gồm 4 alcohol (không có alcohol bậc III). X gồm:",
-                answer: "Propene và but-1-ene."
-            },
-            {
-                question: "Dãy các chất đều tác dụng với ethanol là:",
-                answer: "Na, CuO."
-            },
-            {
-                question: "Các chất tách nước tạo 1 anken duy nhất:",
-                answer: "Propan-1-ol; 2-methylpropan-1-ol; propan-2-ol."
-            },
-            {
-                question: "Xăng E5 bán ngoài thị trường là xăng có 5% alcohol nào theo thể tích?",
-                answer: "Ethanol"
-            },
-            {
-                question: "Các alcohol có nhiệt độ sôi cao hơn các hydrocarbon hoặc dẫn xuất halogen có phân tử khối tương đương là do:",
-                answer: "Alcohol có liên kết hydrogen liên phân tử."
-            },
-            {
-                question: "Oxi hóa alcohol nào sau đây không tạo aldehyde?",
-                answer: "CH3CH(OH)CH3"
-            },
-            {
-                question: "Sản phẩm chính thu được khi tách nước từ 3-methylbutan-2-ol là:",
-                answer: "3-methylbut-2-ene"
-            },
-            {
-                question: "Trong công nghiệp, glycerol được sản xuất theo sơ đồ nào sau đây?",
-                answer: "Propene --&gt; 3-chloroprop-1-ene --&gt; 1,3-dichloropropan-2-ol --&gt; glycerol"
-            },
-            {
-                question: "<img src='https://media.quizizz.com/_mdserver/main/media/resource/gs/quizizz-media/quizzes/bcebb0b0-236c-4187-b0ce-2f35106b3dde-v2' alt='Hình ảnh câu hỏi'>",
-                answer: "But-2-ene"
-            },
-            {
-                question: "<img src='https://media.quizizz.com/_mdserver/main/media/resource/gs/quizizz-media/quizzes/725b9562-a9af-49d3-938d-d3b8eda0f3e9-v2' alt='Hình ảnh câu hỏi'>",
-                answer: "Isobutyl alcohol."
-            }
-        ];
-
-        // Hiển thị tất cả câu hỏi ban đầu
-        function displayQuestions(questionsToShow) {
-            const container = document.getElementById('quizContainer');
-            container.innerHTML = '';
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const qaCards = document.querySelectorAll('.qa-card');
+            let hasResults = false;
             
-            if (questionsToShow.length === 0) {
-                document.getElementById('noResults').style.display = 'block';
-                return;
-            } else {
-                document.getElementById('noResults').style.display = 'none';
-            }
-            
-            questionsToShow.forEach(q => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.innerHTML = `
-                    <h5>${q.question}</h5>
-                    <p class="answer">${q.answer}</p>
-                `;
-                container.appendChild(questionDiv);
+            qaCards.forEach(card => {
+                const question = card.querySelector('.question').textContent.toLowerCase();
+                const answer = card.querySelector('.answer').textContent.toLowerCase();
+                const questionElement = card.querySelector('.question');
+                const answerElement = card.querySelector('.answer');
+                
+                // Remove previous highlights
+                questionElement.innerHTML = questionElement.textContent;
+                answerElement.innerHTML = answerElement.textContent;
+                
+                if (searchTerm === '') {
+                    card.style.display = 'block';
+                    hasResults = true;
+                    return;
+                }
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    hasResults = true;
+                    
+                    // Highlight in question
+                    if (question.includes(searchTerm)) {
+                        const regex = new RegExp(searchTerm, 'gi');
+                        questionElement.innerHTML = questionElement.textContent.replace(regex, 
+                            match => `<span class="highlight">${match}</span>`);
+                    }
+                    
+                    // Highlight in answer
+                    if (answer.includes(searchTerm)) {
+                        const regex = new RegExp(searchTerm, 'gi');
+                        answerElement.innerHTML = answerElement.textContent.replace(regex, 
+                            match => `<span class="highlight">${match}</span>`);
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
             });
-        }
-
-        // Tìm kiếm câu hỏi
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            if (searchTerm === '') {
-                displayQuestions(questions);
-                return;
-            }
             
-            const filteredQuestions = questions.filter(q => 
-                q.question.toLowerCase().includes(searchTerm) || 
-                q.answer.toLowerCase().includes(searchTerm)
-            );
-            
-            displayQuestions(filteredQuestions);
+            document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
         });
-
-        // Hiển thị tất cả câu hỏi khi tải trang
-        displayQuestions(questions);
     </script>
 </body>
 </html>
